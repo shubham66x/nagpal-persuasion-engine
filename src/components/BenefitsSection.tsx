@@ -6,12 +6,12 @@ const benefits = [
   "Free policy comparison so you get the best coverage at lowest premium",
   "Dedicated claim assistance — we fight for your claim, not the company",
   "Personalized protection plans designed for your family's unique needs",
-  "Doorstep service across Ludhiana, Jalandhar & entire Punjab",
+  "PAN India service — consult from anywhere via phone or WhatsApp",
   "Annual policy review to ensure your coverage grows with your life",
   "Zero extra cost — our service is absolutely free for you",
   "Instant WhatsApp support for all your insurance queries",
   "Tax-saving guidance under Section 80C and 80D",
-  "Trusted by 5,000+ families across Punjab for 15+ years",
+  "Trusted by 5,000+ families across India for 15+ years",
 ];
 
 const BenefitsSection = () => (
@@ -27,7 +27,7 @@ const BenefitsSection = () => (
       <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
         {benefits.map((b, i) => (
           <motion.div key={i} initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-            className="flex items-start gap-3 bg-primary-foreground/5 rounded-lg p-4 backdrop-blur-sm"
+            className="flex items-start gap-3 bg-primary-foreground/5 rounded-lg p-4 backdrop-blur-sm border border-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors"
           >
             <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
             <span className="text-primary-foreground/90 text-sm leading-relaxed">{b}</span>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, MessageCircle } from "lucide-react";
 
 const CTASection = () => (
   <section id="cta" className="section-padding bg-background">
@@ -15,27 +15,36 @@ const CTASection = () => (
           </p>
 
           <div className="space-y-4">
-            <a href="tel:+919876000000" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border card-hover">
+            <a href="tel:+919815742277" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border card-hover">
               <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
                 <Phone className="h-6 w-6 text-secondary" />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Call / WhatsApp</div>
-                <div className="font-semibold text-foreground">+91 98760-00000</div>
+                <div className="text-xs text-muted-foreground">Call Us</div>
+                <div className="font-semibold text-foreground">+91 98157-42277</div>
+              </div>
+            </a>
+            <a href="https://wa.me/919815742277" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border card-hover">
+              <div className="w-12 h-12 rounded-lg bg-trust/10 flex items-center justify-center">
+                <MessageCircle className="h-6 w-6 text-trust" />
+              </div>
+              <div>
+                <div className="text-xs text-muted-foreground">WhatsApp</div>
+                <div className="font-semibold text-foreground">+91 98157-42277</div>
               </div>
             </a>
             <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-              <div className="w-12 h-12 rounded-lg bg-trust/10 flex items-center justify-center">
-                <MapPin className="h-6 w-6 text-trust" />
+              <div className="w-12 h-12 rounded-lg bg-warm/10 flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-warm" />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Visit Us</div>
-                <div className="font-semibold text-foreground text-sm">Ludhiana, Punjab, India</div>
+                <div className="text-xs text-muted-foreground">Head Office</div>
+                <div className="font-semibold text-foreground text-sm">Ludhiana, Punjab — Serving All India</div>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-              <div className="w-12 h-12 rounded-lg bg-warm/10 flex items-center justify-center">
-                <Clock className="h-6 w-6 text-warm" />
+              <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
+                <Clock className="h-6 w-6 text-secondary" />
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Working Hours</div>
@@ -46,14 +55,15 @@ const CTASection = () => (
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-          className="bg-card rounded-2xl p-8 border border-border shadow-lg"
+          className="bg-card rounded-2xl p-8 border border-border shadow-lg relative overflow-hidden"
         >
-          <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Get Your Free Quote</h3>
-          <p className="text-muted-foreground text-sm mb-6">Fill this form and we'll call you within 30 minutes.</p>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Your Full Name" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50" />
-            <input type="tel" placeholder="Phone / WhatsApp Number" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50" />
-            <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <h3 className="font-heading text-2xl font-bold text-foreground mb-2 relative">Get Your Free Quote</h3>
+          <p className="text-muted-foreground text-sm mb-6 relative">Fill this form and we'll call you within 30 minutes.</p>
+          <form className="space-y-4 relative" onSubmit={(e) => e.preventDefault()}>
+            <input type="text" placeholder="Your Full Name" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
+            <input type="tel" placeholder="Phone / WhatsApp Number" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
+            <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow">
               <option value="">Select Insurance Type</option>
               <option>Term Life Insurance</option>
               <option>Health Insurance</option>
@@ -61,7 +71,7 @@ const CTASection = () => (
               <option>Property Insurance</option>
               <option>Travel Insurance</option>
             </select>
-            <textarea placeholder="Any specific requirements?" rows={3} className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none" />
+            <textarea placeholder="Any specific requirements?" rows={3} className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none transition-shadow" />
             <button type="submit" className="btn-primary-cta w-full animate-pulse-glow">
               <Mail className="h-5 w-5" /> Get Free Quote Now
             </button>

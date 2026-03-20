@@ -31,7 +31,7 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <a href="tel:+919876000000" className="btn-primary-cta !py-2.5 !px-5 !text-sm">
+          <a href="tel:+919815742277" className="btn-primary-cta !py-2.5 !px-5 !text-sm">
             <Phone className="h-4 w-4" /> Call Now
           </a>
         </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
                   {l.label}
                 </a>
               ))}
-              <a href="tel:+919876000000" className="btn-primary-cta !py-2.5 !text-sm w-full">
+              <a href="tel:+919815742277" className="btn-primary-cta !py-2.5 !text-sm w-full">
                 <Phone className="h-4 w-4" /> Call Now
               </a>
             </div>

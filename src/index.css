@@ -103,6 +103,16 @@
   }
 }
 
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px hsl(45 85% 55% / 0.3); }
+  50% { box-shadow: 0 0 30px hsl(45 85% 55% / 0.5); }
+}
+
 html {
   scroll-behavior: smooth;
 }
