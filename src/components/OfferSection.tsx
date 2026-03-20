@@ -24,9 +24,9 @@ const OfferSection = () => (
       <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
         {bonuses.map((b, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-            className="flex gap-4 p-5 rounded-xl bg-card border border-border card-hover"
+            className="flex gap-4 p-5 rounded-xl bg-card border border-border card-hover group"
           >
-            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
               <b.icon className="h-6 w-6 text-secondary" />
             </div>
             <div>
@@ -39,15 +39,16 @@ const OfferSection = () => (
 
       {/* Urgency */}
       <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-        className="bg-card rounded-2xl border-2 border-secondary/30 p-8 text-center max-w-2xl mx-auto"
+        className="relative bg-card rounded-2xl border-2 border-secondary/30 p-8 text-center max-w-2xl mx-auto overflow-hidden"
       >
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-warm to-secondary" />
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warm/10 text-warm text-sm font-semibold mb-4">
           <Clock className="h-4 w-4" /> Only 10 Free Slots This Month
         </div>
         <h3 className="font-heading text-2xl font-bold text-foreground mb-3">Your Free Consultation is Waiting</h3>
         <p className="text-muted-foreground text-sm mb-6">No cost. No obligation. Just honest, expert advice tailored to your family's needs.</p>
-        <a href="tel:+919876000000" className="btn-primary-cta animate-pulse-glow">
-          <Phone className="h-5 w-5" /> Claim Your Free Consultation
+        <a href="tel:+919815742277" className="btn-primary-cta animate-pulse-glow">
+          <Phone className="h-5 w-5" /> Call +91 98157-42277
         </a>
         <div className="flex items-center justify-center gap-2 mt-4 text-xs text-muted-foreground">
           <Shield className="h-3.5 w-3.5" /> 100% Free — No Hidden Charges

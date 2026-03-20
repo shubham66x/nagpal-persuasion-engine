@@ -9,6 +9,7 @@ import OfferSection from "@/components/OfferSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => (
   <>
@@ -23,6 +24,7 @@ const Index = () => (
     <GuaranteeSection />
     <CTASection />
     <Footer />
+    <WhatsAppButton />
   </>
 );
 
