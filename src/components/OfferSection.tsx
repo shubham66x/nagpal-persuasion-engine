@@ -1,0 +1,60 @@
+import { motion } from "framer-motion";
+import { Gift, FileCheck, BarChart3, Phone, Clock, Shield } from "lucide-react";
+
+const bonuses = [
+  { icon: FileCheck, title: "Free Policy Audit", desc: "We review all your existing policies and identify gaps — worth ₹2,000" },
+  { icon: BarChart3, title: "Custom Comparison Report", desc: "Side-by-side comparison from 20+ companies — worth ₹1,500" },
+  { icon: Gift, title: "Tax Saving Guide", desc: "Maximize your 80C & 80D deductions with our expert guide — worth ₹999" },
+  { icon: Phone, title: "Lifetime Claim Support", desc: "Dedicated claim assistance for the entire policy term — Priceless" },
+];
+
+const OfferSection = () => (
+  <section id="offer" className="section-padding bg-background">
+    <div className="container-narrow">
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+        <span className="text-sm font-semibold text-trust uppercase tracking-wider">Limited Time Offer</span>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
+          Book Your Free Consultation & Get <span className="text-gradient-gold">₹4,499 Worth</span> of Bonuses
+        </h2>
+        <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          For a limited time, every free consultation includes these exclusive bonuses — absolutely free.
+        </p>
+      </motion.div>
+
+      <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+        {bonuses.map((b, i) => (
+          <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+            className="flex gap-4 p-5 rounded-xl bg-card border border-border card-hover"
+          >
+            <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+              <b.icon className="h-6 w-6 text-secondary" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground text-sm mb-1">{b.title}</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">{b.desc}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Urgency */}
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+        className="bg-card rounded-2xl border-2 border-secondary/30 p-8 text-center max-w-2xl mx-auto"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warm/10 text-warm text-sm font-semibold mb-4">
+          <Clock className="h-4 w-4" /> Only 10 Free Slots This Month
+        </div>
+        <h3 className="font-heading text-2xl font-bold text-foreground mb-3">Your Free Consultation is Waiting</h3>
+        <p className="text-muted-foreground text-sm mb-6">No cost. No obligation. Just honest, expert advice tailored to your family's needs.</p>
+        <a href="tel:+919876000000" className="btn-primary-cta animate-pulse-glow">
+          <Phone className="h-5 w-5" /> Claim Your Free Consultation
+        </a>
+        <div className="flex items-center justify-center gap-2 mt-4 text-xs text-muted-foreground">
+          <Shield className="h-3.5 w-3.5" /> 100% Free — No Hidden Charges
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+export default OfferSection;
