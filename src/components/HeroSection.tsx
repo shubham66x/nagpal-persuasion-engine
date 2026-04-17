@@ -29,9 +29,9 @@ const HeroSection = () => {
             >
               🇮🇳 India's Trusted Insurance Advisor
             </motion.span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-6 animate-heading-glow">
               Your Family Deserves <br />
-              <span className="text-gradient-gold">Complete Protection</span>
+              <span className="text-gradient-gold italic">Complete Protection</span>
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-lg">
               Don't leave your family's future to chance. Get expert guidance on Life, Health, Motor, Property & Travel insurance — serving clients all across India.
