@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, Shield } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -15,14 +16,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-9 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container-narrow flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-20">
-        <a href="#hero" className="flex items-center gap-2">
-          <Shield className="h-8 w-8 text-secondary" />
-          <div>
-            <span className="font-heading text-lg md:text-xl font-bold text-foreground">Nagpal</span>
-            <span className="font-heading text-lg md:text-xl font-bold text-secondary"> Insurance</span>
-          </div>
+        <a href="#hero" className="flex items-center">
+          <Logo size="md" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

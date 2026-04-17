@@ -1,13 +1,13 @@
-import { Shield, Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground/70 py-12 px-4 sm:px-6 lg:px-8">
     <div className="container-narrow">
       <div className="grid sm:grid-cols-3 gap-8 mb-8">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <Shield className="h-6 w-6 text-secondary" />
-            <span className="font-heading text-lg font-bold text-primary-foreground">Nagpal Insurance</span>
+          <div className="mb-4">
+            <Logo size="md" variant="light" />
           </div>
           <p className="text-sm leading-relaxed mb-4">Your trusted insurance partner. Protecting families across India since 2009.</p>
           <div className="space-y-2">

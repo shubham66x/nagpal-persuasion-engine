@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import PromoBanner from "@/components/PromoBanner";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import StorySection from "@/components/StorySection";
@@ -10,9 +11,11 @@ import GuaranteeSection from "@/components/GuaranteeSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AIAdvisorChat from "@/components/AIAdvisorChat";
 
 const Index = () => (
   <>
+    <PromoBanner />
     <Navbar />
     <HeroSection />
     <ProblemSection />
@@ -25,6 +28,7 @@ const Index = () => (
     <CTASection />
     <Footer />
     <WhatsAppButton />
+    <AIAdvisorChat />
   </>
 );
 
