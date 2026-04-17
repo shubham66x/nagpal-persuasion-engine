@@ -87,12 +87,10 @@
     @apply max-w-6xl mx-auto;
   }
   .text-gradient-gold {
-    background: var(--gradient-gold-shine);
-    background-size: 200% auto;
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 4s linear infinite;
   }
   .text-glow {
     text-shadow:
@@ -118,16 +116,15 @@
 }
 
 .animate-pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
+  box-shadow: 0 0 20px hsl(45 85% 55% / 0.35);
 }
 
 .animate-heading-glow {
-  animation: headingGlow 3s ease-in-out infinite;
+  /* disabled for performance */
 }
 
 .animate-shimmer-slow {
   background-size: 200% auto;
-  animation: shimmer 6s linear infinite;
 }
 
 @keyframes pulseGlow {
