@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import nagpalPhoto from "@/assets/nagpal-photo.jpeg";
+import nagpalPhoto from "@/assets/nagpal-photo-2.jpg";
 
 const StorySection = () => (
   <section id="story" className="section-padding bg-muted/50">

@@ -11,9 +11,9 @@ const stats = [
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      {/* Animated gradient orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      {/* Static gradient orbs (no animation for performance) */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
@@ -29,7 +29,7 @@ const HeroSection = () => {
             >
               🇮🇳 India's Trusted Insurance Advisor
             </motion.span>
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-6 animate-heading-glow">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-6 text-glow">
               Your Family Deserves <br />
               <span className="text-gradient-gold italic">Complete Protection</span>
             </h1>

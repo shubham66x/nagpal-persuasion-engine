@@ -26,14 +26,13 @@ const PromoBanner = () => {
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary/95 to-primary text-primary-foreground overflow-hidden">
-      <div className="absolute inset-0 opacity-20" style={{ background: "var(--gradient-gold-shine)", backgroundSize: "200% auto" }} />
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary text-primary-foreground border-b border-secondary/20">
       <div className="relative container-narrow px-4 py-2 flex items-center justify-center gap-3 text-xs sm:text-sm">
-        <Sparkles className="h-4 w-4 text-secondary animate-pulse hidden sm:block" />
+        <Sparkles className="h-4 w-4 text-secondary hidden sm:block" />
         <span className="font-medium">
           <span className="text-secondary font-bold">Limited Offer:</span>{" "}
-          <span className="hidden sm:inline">Free policy review + ₹500 Amazon voucher on first consultation. </span>
-          <span className="sm:hidden">Free review + ₹500 voucher. </span>
+          <span className="hidden sm:inline">Free policy review &amp; expert consultation — no charges. </span>
+          <span className="sm:hidden">Free policy review today. </span>
         </span>
         <div className="flex items-center gap-1.5 bg-primary-foreground/10 px-2 py-1 rounded-md backdrop-blur-sm border border-secondary/30">
           <Clock className="h-3 w-3 text-secondary" />
