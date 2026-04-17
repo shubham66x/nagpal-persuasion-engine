@@ -13,8 +13,7 @@ const WhatsAppButton = () => (
     aria-label="Chat on WhatsApp"
   >
     <MessageCircle className="h-7 w-7" />
-    <span className="absolute -top-1 -right-1 w-4 h-4 bg-warm rounded-full animate-ping" />
-    <span className="absolute -top-1 -right-1 w-4 h-4 bg-warm rounded-full" />
+    <span className="absolute -top-1 -right-1 w-3 h-3 bg-warm rounded-full" />
   </motion.a>
 );
 
