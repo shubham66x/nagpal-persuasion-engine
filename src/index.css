@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -42,14 +42,17 @@
     --warm-foreground: 0 0% 100%;
 
     --gradient-hero: linear-gradient(135deg, hsl(215 65% 18%), hsl(215 50% 28%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 85% 55%), hsl(38 90% 48%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 65%), hsl(38 90% 48%));
+    --gradient-gold-shine: linear-gradient(110deg, hsl(45 90% 55%) 0%, hsl(48 100% 75%) 30%, hsl(38 90% 50%) 60%, hsl(45 90% 55%) 100%);
     --gradient-trust: linear-gradient(135deg, hsl(160 50% 40%), hsl(170 45% 35%));
     --shadow-card: 0 4px 24px -4px hsl(215 65% 18% / 0.08);
     --shadow-elevated: 0 12px 40px -8px hsl(215 65% 18% / 0.15);
     --shadow-glow: 0 0 30px hsl(45 85% 55% / 0.3);
+    --shadow-gold-glow: 0 0 60px hsl(45 90% 60% / 0.5);
 
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-script: 'Dancing Script', cursive;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -72,6 +75,7 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    letter-spacing: -0.01em;
   }
 }
 
@@ -83,10 +87,17 @@
     @apply max-w-6xl mx-auto;
   }
   .text-gradient-gold {
-    background: var(--gradient-gold);
+    background: var(--gradient-gold-shine);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+  .text-glow {
+    text-shadow:
+      0 0 20px hsl(45 90% 60% / 0.5),
+      0 0 40px hsl(45 90% 60% / 0.3);
   }
   .card-hover {
     @apply transition-all duration-300 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1;
@@ -101,15 +112,55 @@
            border-2 border-primary-foreground/30 text-primary-foreground
            transition-all duration-300 hover:bg-primary-foreground/10;
   }
+  .font-script {
+    font-family: var(--font-script);
+  }
 }
 
-  .animate-pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.animate-heading-glow {
+  animation: headingGlow 3s ease-in-out infinite;
+}
+
+.animate-shimmer-slow {
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+}
 
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 15px hsl(45 85% 55% / 0.3); }
   50% { box-shadow: 0 0 30px hsl(45 85% 55% / 0.5); }
+}
+
+@keyframes headingGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 15px hsl(45 90% 60% / 0.4),
+      0 0 30px hsl(45 90% 60% / 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 25px hsl(45 90% 65% / 0.7),
+      0 0 50px hsl(45 90% 60% / 0.4),
+      0 0 80px hsl(45 90% 60% / 0.2);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }
 
 html {
