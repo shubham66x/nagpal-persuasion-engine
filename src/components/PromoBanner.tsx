@@ -22,7 +22,6 @@ const PromoBanner = () => {
   }, []);
 
   if (!visible) return null;
-
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
@@ -30,9 +29,9 @@ const PromoBanner = () => {
       <div className="relative container-narrow px-4 py-2 flex items-center justify-center gap-3 text-xs sm:text-sm">
         <Sparkles className="h-4 w-4 text-secondary hidden sm:block" />
         <span className="font-medium">
-          <span className="text-secondary font-bold">Limited Offer:</span>{" "}
-          <span className="hidden sm:inline">Free policy review &amp; expert consultation — no charges. </span>
-          <span className="sm:hidden">Free policy review today. </span>
+          <span className="text-secondary font-bold">Aaj Ka Special:</span>{" "}
+          <span className="hidden sm:inline">FREE policy review &amp; expert consultation — bilkul muft. </span>
+          <span className="sm:hidden">FREE policy review aaj. </span>
         </span>
         <div className="flex items-center gap-1.5 bg-primary-foreground/10 px-2 py-1 rounded-md backdrop-blur-sm border border-secondary/30">
           <Clock className="h-3 w-3 text-secondary" />
@@ -40,11 +39,7 @@ const PromoBanner = () => {
             {pad(time.h)}:{pad(time.m)}:{pad(time.s)}
           </span>
         </div>
-        <button
-          onClick={() => setVisible(false)}
-          className="absolute right-3 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-          aria-label="Close banner"
-        >
+        <button onClick={() => setVisible(false)} className="absolute right-3 text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Close banner">
           <X className="h-4 w-4" />
         </button>
       </div>

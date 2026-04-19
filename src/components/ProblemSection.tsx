@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 import { AlertTriangle, TrendingUp, HeartCrack, Car } from "lucide-react";
 
 const problems = [
-  { icon: HeartCrack, title: "Medical Emergency?", desc: "One hospital visit can wipe out years of savings. Average ICU costs ₹50,000/day across India." },
-  { icon: AlertTriangle, title: "Unexpected Loss?", desc: "Without proper life cover, your family could face financial devastation overnight." },
-  { icon: TrendingUp, title: "Rising Costs?", desc: "Healthcare inflation at 14% means today's ₹5L cover won't be enough tomorrow." },
-  { icon: Car, title: "Accident or Theft?", desc: "One road accident can cost ₹2-10 lakhs. Are you covered beyond basic third-party?" },
+  { icon: HeartCrack, title: "Medical Emergency?", desc: "Ek hospital visit aapki saalon ki savings kha sakti hai. Average ICU cost ₹50,000/din hai India mein." },
+  { icon: AlertTriangle, title: "Achaanak Loss?", desc: "Bina sahi life cover ke, aapka parivaar raat-o-raat financial mushkil mein aa sakta hai." },
+  { icon: TrendingUp, title: "Badhti Costs?", desc: "Healthcare inflation 14% — aaj ka ₹5L cover kal kaafi nahi hoga. Time rehte plan karo." },
+  { icon: Car, title: "Accident Ya Theft?", desc: "Ek road accident ₹2-10 lakh tak le sakta hai. Sirf third-party se kaam nahi chalega." },
 ];
 
 const ProblemSection = () => (
   <section className="section-padding bg-background">
     <div className="container-narrow">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-        <span className="text-sm font-semibold text-warm uppercase tracking-wider">The Reality Check</span>
+        <span className="text-sm font-semibold text-warm uppercase tracking-wider">⚠ Reality Check</span>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
-          Are You <span className="text-warm">Gambling</span> With Your Family's Future?
+          Kya Aap Apne Family Ke Future Ke Saath <span className="text-warm">Gamble</span> Kar Rahe Ho?
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Most Indian families are dangerously underinsured. One unexpected event can undo a lifetime of hard work.
+          India ke zyaadatar families khatarnaak roop se under-insured hain. Ek anhoni aapki zindagi bhar ki mehnat tabaah kar sakti hai.
         </p>
       </motion.div>
 

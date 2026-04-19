@@ -2,25 +2,25 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
-  "Unbiased advice — we work with 20+ insurance companies, not just one",
-  "Free policy comparison so you get the best coverage at lowest premium",
-  "Dedicated claim assistance — we fight for your claim, not the company",
-  "Personalized protection plans designed for your family's unique needs",
-  "PAN India service — consult from anywhere via phone or WhatsApp",
-  "Annual policy review to ensure your coverage grows with your life",
-  "Zero extra cost — our service is absolutely free for you",
-  "Instant WhatsApp support for all your insurance queries",
-  "Tax-saving guidance under Section 80C and 80D",
-  "Trusted by 5,000+ families across India for 15+ years",
+  "Unbiased advice — hum 20+ insurance companies ke saath kaam karte hain, sirf ek se nahi",
+  "FREE policy comparison — best coverage minimum premium par",
+  "Dedicated claim assistance — hum aapke liye ladte hain, company ke liye nahi",
+  "Personalized protection plans — aapke parivaar ki unique zaruraton ke hisaab se",
+  "PAN India service — phone ya WhatsApp par kahin se bhi consultation",
+  "Annual policy review — taaki coverage aapki life ke saath badhta rahe",
+  "Zero extra cost — hamari service aapke liye bilkul FREE hai",
+  "Instant WhatsApp support — har insurance query ke liye",
+  "Tax-saving guidance — Section 80C aur 80D ke under",
+  "5,000+ families ka bharosa, 15+ saal se pure India mein",
 ];
 
 const BenefitsSection = () => (
   <section id="benefits" className="section-padding" style={{ background: "var(--gradient-hero)" }}>
     <div className="container-narrow">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Why Nagpal Insurance?</span>
+        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">WeSure Kyun?</span>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-3">
-          10 Reasons Smart Families Choose Us
+          10 Reasons Smart Families Humein Choose Karte Hain
         </h2>
       </motion.div>
 
