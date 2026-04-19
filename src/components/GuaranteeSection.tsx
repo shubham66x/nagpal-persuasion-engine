@@ -9,13 +9,13 @@ const GuaranteeSection = () => (
       >
         <ShieldCheck className="h-16 w-16 text-secondary mx-auto mb-6" />
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-          Our Iron-Clad Promise To You
+          Hamara Iron-Clad Vaada
         </h2>
         <p className="text-primary-foreground/80 text-lg leading-relaxed mb-6">
-          If we can't find you a better policy or save you money compared to your current coverage — we'll tell you honestly. No pressure, no tricks, no hidden agenda.
+          Agar hum aapko better policy ya paise bachane wala plan na de paayein aapke current coverage ke comparison mein — toh hum aapko honestly bata denge. Koi pressure nahi, koi tricks nahi, koi hidden agenda nahi.
         </p>
         <p className="text-primary-foreground/80 leading-relaxed">
-          We've built our reputation over <strong className="text-primary-foreground">15 years</strong> on one principle: <strong className="text-secondary">your trust is worth more than any commission.</strong> That's why 90% of our business comes from referrals.
+          Humne <strong className="text-primary-foreground">15 saal</strong> ek hi principle par reputation banayi hai: <strong className="text-secondary">aapka bharosa kisi bhi commission se zyada keemti hai.</strong> Isi liye 90% business referral se aata hai.
         </p>
       </motion.div>
     </div>

@@ -6,12 +6,12 @@ const CTASection = () => (
     <div className="container-narrow">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Take Action Now</span>
+          <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Abhi Action Lo</span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
-            Your Family's Protection is <span className="text-gradient-gold">One Call Away</span>
+            Aapke Family Ki Suraksha <span className="text-gradient-gold">Ek Call Door Hai</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Every day without proper insurance is a risk your family doesn't deserve. Call us today for a free, no-obligation consultation. It takes just 15 minutes to secure your family's future.
+            Bina sahi insurance ke har din ek risk hai jo aapka parivaar deserve nahi karta. Aaj hi free, no-obligation consultation ke liye call karein. Sirf 15 minutes mein future secure karein.
           </p>
 
           <div className="space-y-4">
@@ -20,7 +20,7 @@ const CTASection = () => (
                 <Phone className="h-6 w-6 text-secondary" />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Call Us</div>
+                <div className="text-xs text-muted-foreground">Call Karein</div>
                 <div className="font-semibold text-foreground">+91 98157-42277</div>
               </div>
             </a>
@@ -39,7 +39,7 @@ const CTASection = () => (
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Head Office</div>
-                <div className="font-semibold text-foreground text-sm">Ludhiana, Punjab — Serving All India</div>
+                <div className="font-semibold text-foreground text-sm">Ludhiana, Punjab — Pure India Mein Service</div>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
@@ -58,24 +58,24 @@ const CTASection = () => (
           className="bg-card rounded-2xl p-8 border border-border shadow-lg relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-          <h3 className="font-heading text-2xl font-bold text-foreground mb-2 relative">Get Your Free Quote</h3>
-          <p className="text-muted-foreground text-sm mb-6 relative">Fill this form and we'll call you within 30 minutes.</p>
+          <h3 className="font-heading text-2xl font-bold text-foreground mb-2 relative">FREE Quote Paayein</h3>
+          <p className="text-muted-foreground text-sm mb-6 relative">Yeh form bharein, hum 30 minute mein aapko call karenge.</p>
           <form className="space-y-4 relative" onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Your Full Name" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
+            <input type="text" placeholder="Aapka Pura Naam" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
             <input type="tel" placeholder="Phone / WhatsApp Number" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
             <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow">
-              <option value="">Select Insurance Type</option>
+              <option value="">Insurance Type Choose Karein</option>
               <option>Term Life Insurance</option>
               <option>Health Insurance</option>
               <option>Motor Insurance</option>
               <option>Property Insurance</option>
               <option>Travel Insurance</option>
             </select>
-            <textarea placeholder="Any specific requirements?" rows={3} className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none transition-shadow" />
-            <button type="submit" className="btn-primary-cta w-full animate-pulse-glow">
-              <Mail className="h-5 w-5" /> Get Free Quote Now
+            <textarea placeholder="Koi specific requirement?" rows={3} className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none transition-shadow" />
+            <button type="submit" className="btn-primary-cta w-full">
+              <Mail className="h-5 w-5" /> FREE Quote Abhi Lein
             </button>
-            <p className="text-xs text-muted-foreground text-center">🔒 Your information is 100% secure and never shared.</p>
+            <p className="text-xs text-muted-foreground text-center">🔒 Aapki information 100% secure hai aur kabhi share nahi hoti.</p>
           </form>
         </motion.div>
       </div>

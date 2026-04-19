@@ -2,24 +2,24 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
-  { name: "Rajinder Singh", location: "Ludhiana", text: "Nagpal ji helped us get ₹18 lakh health claim settled in just 5 days when the hospital was creating problems. Lifesaver!", rating: 5 },
-  { name: "Priya Sharma", location: "Delhi", text: "I was paying ₹32,000 for my family health insurance. Nagpal Insurance found me better coverage for just ₹22,000. Saved ₹10,000!", rating: 5 },
-  { name: "Gurpreet Kaur", location: "Ludhiana", text: "After my husband's sudden passing, Nagpal ji personally handled the entire ₹1 Crore life insurance claim. Our family will forever be grateful.", rating: 5 },
-  { name: "Amit Bansal", location: "Mumbai", text: "Best motor insurance advice! Got zero depreciation cover and when my car was damaged, got full claim without any deduction. Highly recommend!", rating: 5 },
-  { name: "Hardeep Gill", location: "Chandigarh", text: "Nagpal Insurance reviewed all our old policies and restructured everything. Now we have better coverage and actually paying less. Brilliant service!", rating: 5 },
-  { name: "Neha Gupta", location: "Bangalore", text: "Took travel insurance for our Europe trip. When my luggage was lost, the claim was processed smoothly. Peace of mind worth every rupee!", rating: 5 },
+  { name: "Harpreet Singh", location: "Ludhiana", text: "Meri factory mein fire lag gayi thi. WeSure team ne 48 ghante mein ₹18 lakh ka claim settle karwa diya. Yeh sirf insurance nahi — yeh dost hai.", rating: 5 },
+  { name: "Rajveer Kaur", location: "Amritsar", text: "Husband ki sudden death ke baad mujhe ₹1 Crore term claim mila bina kisi taklif ke. Is insurance ne meri aur bachon ki zindagi bachaa li.", rating: 5 },
+  { name: "Gurpreet Malhotra", location: "Chandigarh", text: "Health insurance ki poori family ke liye best deal mili. Cashless admit tha PGI mein — ek rupaya khud nahi dena pada.", rating: 5 },
+  { name: "Amit Bansal", location: "Mumbai", text: "Best motor insurance advice! Zero depreciation cover liya, jab car damage hui toh full claim mila bina kisi deduction ke. Highly recommend!", rating: 5 },
+  { name: "Priya Sharma", location: "Delhi", text: "Main ₹32,000 de rahi thi family health insurance ke liye. WeSure ne better coverage ₹22,000 mein dilwa diya. Saved ₹10,000!", rating: 5 },
+  { name: "Neha Gupta", location: "Bangalore", text: "Europe trip ke liye travel insurance liya. Luggage lost ho gaya tha — claim smoothly process hua. Peace of mind worth every rupee!", rating: 5 },
 ];
 
 const ProofSection = () => (
   <section id="proof" className="section-padding bg-muted/50">
     <div className="container-narrow">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Real Results</span>
+        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Real Stories</span>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
-          Hear From Families We've <span className="text-gradient-gold">Protected</span>
+          Suniye Un Families Se Jinki Humne <span className="text-gradient-gold">Suraksha Ki</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Don't just take our word for it. Here's what our clients across India say about their experience with us.
+          Sirf hamari baat mat maaniye. Dekhiye India bhar ke clients kya keh rahe hain WeSure ke baare mein.
         </p>
       </motion.div>
 

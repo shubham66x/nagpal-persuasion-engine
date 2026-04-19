@@ -1,25 +1,22 @@
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, Shield, Users, Award, MessageCircle } from "lucide-react";
+import { Phone, Shield, Users, Award, MessageCircle } from "lucide-react";
 import nagpalPhoto from "@/assets/nagpal-photo.jpeg";
 
 const stats = [
-  { icon: Users, value: "5,000+", label: "Families Protected" },
-  { icon: Award, value: "15+", label: "Years Experience" },
-  { icon: Shield, value: "₹100Cr+", label: "Claims Settled" },
+  { icon: Users, value: "5,000+", label: "Families Surakshit" },
+  { icon: Award, value: "15+", label: "Saal Ka Bharosa" },
+  { icon: Shield, value: "₹100Cr+", label: "Claims Settle Kiye" },
 ];
 
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      {/* Static gradient orbs (no animation for performance) */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-      {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="container-narrow section-padding relative z-10 pt-28 md:pt-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Copy */}
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
@@ -27,22 +24,22 @@ const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary text-sm font-semibold mb-6 backdrop-blur-sm border border-secondary/20"
             >
-              🇮🇳 India's Trusted Insurance Advisor
+              🇮🇳 IRDAI Registered · India Ka Trusted Advisor
             </motion.span>
             <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-6 text-glow">
-              Your Family Deserves <br />
-              <span className="text-gradient-gold italic">Complete Protection</span>
+              Aapka Parivaar Deserve Karta Hai <br />
+              <span className="text-gradient-gold italic">Poori Suraksha</span>
             </h1>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-8 max-w-lg">
-              Don't leave your family's future to chance. Get expert guidance on Life, Health, Motor, Property & Travel insurance — serving clients all across India.
+              Apne family ka future kismat pe mat chodho. WeSure se paayein expert guidance — Life, Health, Motor, Property aur Travel insurance par. Pure India mein service.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <a href="tel:+919815742277" className="btn-primary-cta animate-pulse-glow">
-                <Phone className="h-5 w-5" /> Get Free Consultation
+              <a href="tel:+919815742277" className="btn-primary-cta">
+                <Phone className="h-5 w-5" /> Free Consultation Lo
               </a>
               <a href="https://wa.me/919815742277" target="_blank" rel="noopener noreferrer" className="btn-outline-cta !border-trust/40 hover:!bg-trust/10">
-                <MessageCircle className="h-5 w-5" /> WhatsApp Us
+                <MessageCircle className="h-5 w-5" /> WhatsApp Karein
               </a>
             </div>
 
@@ -59,16 +56,14 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Photo */}
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }}
             className="flex justify-center lg:justify-end"
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-secondary/20 to-secondary/5 rounded-3xl blur-xl" />
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl overflow-hidden border-4 border-secondary/30 shadow-2xl">
-                <img src={nagpalPhoto} alt="Nagpal Insurance Services - Your Trusted Insurance Advisor" className="w-full h-full object-cover object-top" />
+                <img src={nagpalPhoto} alt="WeSure - Aapka Trusted Insurance Advisor" className="w-full h-full object-cover object-top" />
               </div>
-              {/* Floating badge */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -85,14 +80,13 @@ const HeroSection = () => {
                   </div>
                 </div>
               </motion.div>
-              {/* Serving all India badge */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2 }}
                 className="absolute -top-3 -right-3 bg-secondary text-secondary-foreground rounded-lg px-3 py-1.5 shadow-lg text-xs font-bold"
               >
-                🇮🇳 PAN India
+                🇮🇳 PAN India Service
               </motion.div>
             </div>
           </motion.div>

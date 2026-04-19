@@ -2,23 +2,23 @@ import { motion } from "framer-motion";
 import { Heart, Activity, Car, Building2, Plane, ArrowRight } from "lucide-react";
 
 const services = [
-  { icon: Heart, title: "Term Life Insurance", desc: "Secure your family's future with affordable pure protection plans starting at just ₹500/month. Cover up to ₹2 Crore.", color: "text-warm", bg: "bg-warm/10" },
-  { icon: Activity, title: "Health Insurance", desc: "Comprehensive cashless health coverage across 10,000+ hospitals. Individual & family floater plans with no room rent limits.", color: "text-trust", bg: "bg-trust/10" },
-  { icon: Car, title: "Motor Insurance", desc: "Complete car & bike insurance with instant claims, roadside assistance, and zero depreciation. Own damage + third-party.", color: "text-secondary", bg: "bg-secondary/10" },
-  { icon: Building2, title: "Property Insurance", desc: "Protect your home, shop, or factory against fire, theft, natural disasters, and more. Commercial & residential coverage.", color: "text-primary", bg: "bg-primary/10" },
-  { icon: Plane, title: "Travel Insurance", desc: "Travel worry-free with coverage for medical emergencies, trip cancellation, lost baggage & passport assistance worldwide.", color: "text-warm", bg: "bg-warm/10" },
+  { icon: Heart, title: "Term Life Insurance", desc: "Sirf ₹500/month se shuru — apne family ko ₹2 Crore tak ka cover dilao. Pure protection, zero compromise.", color: "text-warm", bg: "bg-warm/10" },
+  { icon: Activity, title: "Health Insurance", desc: "10,000+ hospitals mein cashless treatment. Family floater ya individual — har plan mein zero room rent limit.", color: "text-trust", bg: "bg-trust/10" },
+  { icon: Car, title: "Motor Insurance", desc: "Car ya bike — bumper-to-bumper protection. Instant claim, 24/7 roadside assistance, zero depreciation cover.", color: "text-secondary", bg: "bg-secondary/10" },
+  { icon: Building2, title: "Property Insurance", desc: "Ghar, dukaan ya factory — fire, theft, flood aur natural disaster se poori suraksha. Commercial + residential.", color: "text-primary", bg: "bg-primary/10" },
+  { icon: Plane, title: "Travel Insurance", desc: "Amritsar se Amsterdam tak — medical emergency, trip cancellation, lost baggage. Travel karo bina tension.", color: "text-warm", bg: "bg-warm/10" },
 ];
 
 const ServicesSection = () => (
   <section id="services" className="section-padding bg-background">
     <div className="container-narrow">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Our Services</span>
+        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Hamari Services</span>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
-          Complete Protection, <span className="text-gradient-gold">One Trusted Advisor</span>
+          Poori Suraksha, <span className="text-gradient-gold">Ek Hi Trusted Advisor</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Why run to five different agents? Get expert advice on all your insurance needs from a single trusted partner.
+          Paanch alag-alag agents ke pas kyun bhaagein? Ek hi jagah se sab insurance ka expert advice paayein.
         </p>
       </motion.div>
 
@@ -33,7 +33,7 @@ const ServicesSection = () => (
             <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{s.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">{s.desc}</p>
             <span className="inline-flex items-center gap-1 text-sm font-medium text-secondary group-hover:gap-2 transition-all">
-              Get Quote <ArrowRight className="h-4 w-4" />
+              Quote Lo <ArrowRight className="h-4 w-4" />
             </span>
           </motion.div>
         ))}
