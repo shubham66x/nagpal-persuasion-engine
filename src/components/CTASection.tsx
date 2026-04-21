@@ -17,7 +17,7 @@ const formSchema = z.object({
     .trim()
     .regex(/^[6-9]\d{9}$/, { message: "Sahi 10-digit Indian mobile number daalein" }),
   preferredTime: z.enum(["Morning", "Afternoon", "Evening"], {
-    errorMap: () => ({ message: "Preferred time choose karein" }),
+    message: "Preferred time choose karein",
   }),
 });
 
