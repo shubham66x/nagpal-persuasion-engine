@@ -50,9 +50,9 @@
     --shadow-glow: 0 0 30px hsl(45 85% 55% / 0.4);
     --shadow-gold-glow: 0 0 60px hsl(45 90% 60% / 0.45);
 
-    --font-heading: 'Fraunces', serif;
-    --font-body: 'Inter', sans-serif;
-    --font-script: 'Fraunces', serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-script: 'Playfair Display', serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
