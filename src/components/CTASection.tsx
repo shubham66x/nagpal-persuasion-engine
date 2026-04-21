@@ -1,86 +1,188 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MapPin, Clock, Mail, MessageCircle } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { CheckCircle2, ShieldCheck, Clock, MessageCircle } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
-const CTASection = () => (
-  <section id="cta" className="section-padding bg-background">
-    <div className="container-narrow">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Abhi Action Lo</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
-            Aapke Family Ki Suraksha <span className="text-gradient-gold">Ek Call Door Hai</span>
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            Bina sahi insurance ke har din ek risk hai jo aapka parivaar deserve nahi karta. Aaj hi free, no-obligation consultation ke liye call karein. Sirf 15 minutes mein future secure karein.
-          </p>
+const formSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, { message: "Naam kam se kam 2 letters ka hona chahiye" })
+    .max(80, { message: "Naam 80 letters se kam hona chahiye" }),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^[6-9]\d{9}$/, { message: "Sahi 10-digit Indian mobile number daalein" }),
+  preferredTime: z.enum(["Morning", "Afternoon", "Evening"], {
+    message: "Preferred time choose karein",
+  }),
+});
 
-          <div className="space-y-4">
-            <a href="tel:+919815742277" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border card-hover">
-              <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
-                <Phone className="h-6 w-6 text-secondary" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">Call Karein</div>
-                <div className="font-semibold text-foreground">+91 98157-42277</div>
-              </div>
-            </a>
-            <a href="https://wa.me/919815742277" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border card-hover">
-              <div className="w-12 h-12 rounded-lg bg-trust/10 flex items-center justify-center">
-                <MessageCircle className="h-6 w-6 text-trust" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">WhatsApp</div>
-                <div className="font-semibold text-foreground">+91 98157-42277</div>
-              </div>
-            </a>
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-              <div className="w-12 h-12 rounded-lg bg-warm/10 flex items-center justify-center">
-                <MapPin className="h-6 w-6 text-warm" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">Head Office</div>
-                <div className="font-semibold text-foreground text-sm">Ludhiana, Punjab — Pure India Mein Service</div>
-              </div>
+type FormValues = z.infer<typeof formSchema>;
+
+const CTASection = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: { name: "", phone: "", preferredTime: undefined },
+  });
+
+  const onSubmit = async (data: FormValues) => {
+    // Simulate submission. (Wire to backend once Supabase/Cloud is connected.)
+    await new Promise((r) => setTimeout(r, 600));
+    setSubmitted(true);
+    toast({
+      title: "Request mil gayi 👍",
+      description: "Hum 24 ghante mein aapko call karenge.",
+    });
+    reset();
+  };
+
+  return (
+    <section id="cta" className="section-padding bg-background scroll-mt-24">
+      <div className="container-narrow">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Get Started</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-5">
+              Free Consultation Book Karein
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed mb-8">
+              Form bharein, hum 24 ghante mein call karenge. Koi charge nahi, koi commitment nahi — bas honest expert advice.
+            </p>
+
+            <div className="space-y-4">
+              {[
+                { icon: ShieldCheck, title: "100% Confidential", desc: "Aapki info safe hai, kabhi share nahi hoti." },
+                { icon: Clock, title: "24 Ghante Mein Callback", desc: "Sahi time par hum aapko call karenge." },
+                { icon: MessageCircle, title: "Honest Advice", desc: "Bina pressure, bina sales pitch — sirf guidance." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="h-5 w-5 text-secondary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground text-base">{item.title}</div>
+                    <div className="text-sm text-muted-foreground">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border">
-              <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center">
-                <Clock className="h-6 w-6 text-secondary" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">Working Hours</div>
-                <div className="font-semibold text-foreground text-sm">Mon – Sat, 9:00 AM – 7:00 PM</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-          className="bg-card rounded-2xl p-8 border border-border shadow-lg relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-          <h3 className="font-heading text-2xl font-bold text-foreground mb-2 relative">FREE Quote Paayein</h3>
-          <p className="text-muted-foreground text-sm mb-6 relative">Yeh form bharein, hum 30 minute mein aapko call karenge.</p>
-          <form className="space-y-4 relative" onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Aapka Pura Naam" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
-            <input type="tel" placeholder="Phone / WhatsApp Number" className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" />
-            <select className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow">
-              <option value="">Insurance Type Choose Karein</option>
-              <option>Term Life Insurance</option>
-              <option>Health Insurance</option>
-              <option>Motor Insurance</option>
-              <option>Property Insurance</option>
-              <option>Travel Insurance</option>
-            </select>
-            <textarea placeholder="Koi specific requirement?" rows={3} className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none transition-shadow" />
-            <button type="submit" className="btn-primary-cta w-full">
-              <Mail className="h-5 w-5" /> FREE Quote Abhi Lein
-            </button>
-            <p className="text-xs text-muted-foreground text-center">🔒 Aapki information 100% secure hai aur kabhi share nahi hoti.</p>
-          </form>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-lg"
+          >
+            {submitted ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="h-8 w-8 text-secondary" />
+                </div>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Shukriya! 🙏</h3>
+                <p className="text-base text-muted-foreground mb-6">
+                  Hum 24 ghante mein aapko call karenge.
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="text-sm text-secondary hover:underline font-medium"
+                >
+                  Ek aur request bhejein
+                </button>
+              </div>
+            ) : (
+              <>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Free Consultation Lo</h3>
+                <p className="text-sm text-muted-foreground mb-6">Sirf 3 fields. Hum 24 ghante mein call karenge.</p>
+
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
+                      Aapka Naam
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      placeholder="Eg. Rohan Sharma"
+                      autoComplete="name"
+                      maxLength={80}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow"
+                      {...register("name")}
+                    />
+                    {errors.name && (
+                      <p className="text-sm text-destructive mt-1.5">{errors.name.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-1.5">
+                      Mobile Number
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      inputMode="numeric"
+                      placeholder="10-digit mobile number"
+                      autoComplete="tel"
+                      maxLength={10}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow"
+                      {...register("phone")}
+                    />
+                    {errors.phone && (
+                      <p className="text-sm text-destructive mt-1.5">{errors.phone.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="preferredTime" className="block text-sm font-medium text-foreground mb-1.5">
+                      Call Karne Ka Best Time
+                    </label>
+                    <select
+                      id="preferredTime"
+                      defaultValue=""
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow"
+                      {...register("preferredTime")}
+                    >
+                      <option value="" disabled>Time choose karein</option>
+                      <option value="Morning">Morning (9 AM – 12 PM)</option>
+                      <option value="Afternoon">Afternoon (12 PM – 4 PM)</option>
+                      <option value="Evening">Evening (4 PM – 7 PM)</option>
+                    </select>
+                    {errors.preferredTime && (
+                      <p className="text-sm text-destructive mt-1.5">{errors.preferredTime.message}</p>
+                    )}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary-cta w-full disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Bhej rahe hain..." : "Free Consultation Lo"}
+                  </button>
+
+                  <p className="text-xs text-muted-foreground text-center pt-1">
+                    🔒 Koi charge nahi. Koi commitment nahi. Aapka data 100% safe.
+                  </p>
+                </form>
+              </>
+            )}
+          </motion.div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default CTASection;

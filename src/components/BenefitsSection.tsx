@@ -1,38 +1,61 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Users, HeartHandshake } from "lucide-react";
 
 const benefits = [
-  "Unbiased advice — hum 20+ insurance companies ke saath kaam karte hain, sirf ek se nahi",
-  "FREE policy comparison — best coverage minimum premium par",
-  "Dedicated claim assistance — hum aapke liye ladte hain, company ke liye nahi",
-  "Personalized protection plans — aapke parivaar ki unique zaruraton ke hisaab se",
-  "PAN India service — phone ya WhatsApp par kahin se bhi consultation",
-  "Annual policy review — taaki coverage aapki life ke saath badhta rahe",
-  "Zero extra cost — hamari service aapke liye bilkul FREE hai",
-  "Instant WhatsApp support — har insurance query ke liye",
-  "Tax-saving guidance — Section 80C aur 80D ke under",
-  "5,000+ families ka bharosa, 15+ saal se pure India mein",
+  {
+    icon: ShieldCheck,
+    title: "Unbiased Advice",
+    desc: "Hum 20+ insurance companies se kaam karte hain — sirf aapke liye sahi plan suggest karte hain.",
+  },
+  {
+    icon: Users,
+    title: "Expert Guidance",
+    desc: "15+ saal ka experience. Simple language mein samjhayenge, koi jargon nahi.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Claim Support",
+    desc: "Claim ke time hum aapke saath khade hain — start to finish poori madad.",
+  },
 ];
 
 const BenefitsSection = () => (
-  <section id="benefits" className="section-padding" style={{ background: "var(--gradient-hero)" }}>
+  <section id="benefits" className="section-padding bg-muted/40">
     <div className="container-narrow">
-      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">WeSure Kyun?</span>
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mt-3">
-          10 Reasons Smart Families Humein Choose Karte Hain
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-12 max-w-2xl mx-auto"
+      >
+        <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Why WeSure</span>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
+          Sirf 3 cheezein, jo matter karti hain
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {benefits.map((b, i) => (
-          <motion.div key={i} initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-            className="flex items-start gap-3 bg-primary-foreground/5 rounded-lg p-4 backdrop-blur-sm border border-primary-foreground/5 hover:bg-primary-foreground/10 transition-colors"
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="bg-card rounded-2xl p-7 border border-border shadow-sm hover:shadow-lg transition-shadow"
           >
-            <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-            <span className="text-primary-foreground/90 text-sm leading-relaxed">{b}</span>
+            <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
+              <b.icon className="h-6 w-6 text-secondary" />
+            </div>
+            <h3 className="font-heading text-xl font-bold text-foreground mb-2">{b.title}</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">{b.desc}</p>
           </motion.div>
         ))}
+      </div>
+
+      <div className="text-center mt-12">
+        <a href="#cta" className="btn-primary-cta">Free Consultation Lo</a>
+        <p className="text-sm text-muted-foreground mt-3">Koi charge nahi. Koi commitment nahi.</p>
       </div>
     </div>
   </section>
