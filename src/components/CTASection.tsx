@@ -10,14 +10,14 @@ const formSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(2, { message: "Naam kam se kam 2 letters ka hona chahiye" })
-    .max(80, { message: "Naam 80 letters se kam hona chahiye" }),
+    .min(2, { message: "Name must be at least 2 characters" })
+    .max(80, { message: "Name must be under 80 characters" }),
   phone: z
     .string()
     .trim()
-    .regex(/^[6-9]\d{9}$/, { message: "Sahi 10-digit Indian mobile number daalein" }),
+    .regex(/^[6-9]\d{9}$/, { message: "Enter a valid 10-digit Indian mobile number" }),
   preferredTime: z.enum(["Morning", "Afternoon", "Evening"], {
-    message: "Preferred time choose karein",
+    message: "Please choose a preferred time",
   }),
 });
 
@@ -37,12 +37,11 @@ const CTASection = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
-    // Simulate submission. (Wire to backend once Supabase/Cloud is connected.)
     await new Promise((r) => setTimeout(r, 600));
     setSubmitted(true);
     toast({
-      title: "Request mil gayi 👍",
-      description: "Hum 24 ghante mein aapko call karenge.",
+      title: "Request received 👍",
+      description: "We'll call you back within 24 hours.",
     });
     reset();
   };
@@ -54,17 +53,17 @@ const CTASection = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Get Started</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3 mb-5">
-              Free Consultation Book Karein
+              Book Your Free Consultation
             </h2>
             <p className="text-base text-muted-foreground leading-relaxed mb-8">
-              Form bharein, hum 24 ghante mein call karenge. Koi charge nahi, koi commitment nahi — bas honest expert advice.
+              Fill in the form and we'll call you back within 24 hours. No charge, no commitment — just honest expert advice.
             </p>
 
             <div className="space-y-4">
               {[
-                { icon: ShieldCheck, title: "100% Confidential", desc: "Aapki info safe hai, kabhi share nahi hoti." },
-                { icon: Clock, title: "24 Ghante Mein Callback", desc: "Sahi time par hum aapko call karenge." },
-                { icon: MessageCircle, title: "Honest Advice", desc: "Bina pressure, bina sales pitch — sirf guidance." },
+                { icon: ShieldCheck, title: "100% Confidential", desc: "Your information is safe and never shared." },
+                { icon: Clock, title: "Callback Within 24 Hours", desc: "We'll call you at the time that suits you best." },
+                { icon: MessageCircle, title: "Honest Advice", desc: "No pressure, no sales pitch — just clear guidance." },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
@@ -90,31 +89,31 @@ const CTASection = () => {
                 <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="h-8 w-8 text-secondary" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Shukriya! 🙏</h3>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Thank you! 🙏</h3>
                 <p className="text-base text-muted-foreground mb-6">
-                  Hum 24 ghante mein aapko call karenge.
+                  We'll call you back within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="text-sm text-secondary hover:underline font-medium"
                 >
-                  Ek aur request bhejein
+                  Submit another request
                 </button>
               </div>
             ) : (
               <>
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Free Consultation Lo</h3>
-                <p className="text-sm text-muted-foreground mb-6">Sirf 3 fields. Hum 24 ghante mein call karenge.</p>
+                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Get Free Consultation</h3>
+                <p className="text-sm text-muted-foreground mb-6">Just 3 fields. We'll call you within 24 hours.</p>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">
-                      Aapka Naam
+                      Your Name
                     </label>
                     <input
                       id="name"
                       type="text"
-                      placeholder="Eg. Rohan Sharma"
+                      placeholder="e.g. Rohan Sharma"
                       autoComplete="name"
                       maxLength={80}
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow"
@@ -146,7 +145,7 @@ const CTASection = () => {
 
                   <div>
                     <label htmlFor="preferredTime" className="block text-sm font-medium text-foreground mb-1.5">
-                      Call Karne Ka Best Time
+                      Best Time to Call
                     </label>
                     <select
                       id="preferredTime"
@@ -154,7 +153,7 @@ const CTASection = () => {
                       className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground text-base focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow"
                       {...register("preferredTime")}
                     >
-                      <option value="" disabled>Time choose karein</option>
+                      <option value="" disabled>Choose a time</option>
                       <option value="Morning">Morning (9 AM – 12 PM)</option>
                       <option value="Afternoon">Afternoon (12 PM – 4 PM)</option>
                       <option value="Evening">Evening (4 PM – 7 PM)</option>
@@ -169,11 +168,11 @@ const CTASection = () => {
                     disabled={isSubmitting}
                     className="btn-primary-cta w-full disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Bhej rahe hain..." : "Free Consultation Lo"}
+                    {isSubmitting ? "Submitting..." : "Get Free Consultation"}
                   </button>
 
                   <p className="text-xs text-muted-foreground text-center pt-1">
-                    🔒 Koi charge nahi. Koi commitment nahi. Aapka data 100% safe.
+                    🔒 No charge. No commitment. Your data is 100% safe.
                   </p>
                 </form>
               </>

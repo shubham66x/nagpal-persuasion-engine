@@ -61,7 +61,7 @@ const Navbar = () => {
                 onClick={(e) => { setOpen(false); scrollToForm(e); }}
                 className="btn-primary-cta !py-2.5 !text-sm w-full"
               >
-                Free Consultation Lo
+                Free Consultation
               </a>
             </div>
           </motion.div>

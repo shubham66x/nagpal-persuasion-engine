@@ -13,54 +13,54 @@ type State = Record<string, string>;
 
 const buildSteps = (state: State): Record<string, Step> => ({
   hook: {
-    message: "Namaste 👋 Main 60 seconds mein aapke liye best insurance plan dhundh dunga.",
+    message: "Hi 👋 I'll help you find the best insurance plan in 60 seconds.",
     options: [
-      { label: "Shuru Karein", next: "intent", emoji: "✨" },
-      { label: "Sirf Dekh Raha Hoon", next: "browsing" },
+      { label: "Let's Start", next: "intent", emoji: "✨" },
+      { label: "Just Browsing", next: "browsing" },
     ],
   },
   browsing: {
-    message: "Koi baat nahi! Aaram se dekho. Jab ready ho, batana 🙂",
-    options: [{ label: "Theek hai, shuru karein", next: "intent" }],
+    message: "No problem! Take your time. Let me know whenever you're ready 🙂",
+    options: [{ label: "Okay, let's start", next: "intent" }],
   },
   intent: {
-    message: "Aap kya dhundh rahe hain?",
+    message: "What are you looking for?",
     options: [
       { label: "Life Insurance", next: "life", emoji: "❤️" },
       { label: "Health Insurance", next: "health", emoji: "🏥" },
       { label: "Car Insurance", next: "car", emoji: "🚗" },
       { label: "Investment + Insurance", next: "age", emoji: "💰" },
-      { label: "Pata Nahi", next: "notSure", emoji: "🤔" },
+      { label: "Not Sure Yet", next: "notSure", emoji: "🤔" },
     ],
   },
   life: {
-    message: "Yeh kiske liye chahiye?",
+    message: "Who is this cover for?",
     options: [
-      { label: "Mere Liye", next: "age" },
-      { label: "Family Ke Liye", next: "age" },
+      { label: "For Me", next: "age" },
+      { label: "For My Family", next: "age" },
     ],
   },
   health: {
-    message: "Kitne logon ka cover chahiye?",
+    message: "How many people need to be covered?",
     options: [
       { label: "1 Person", next: "age" },
-      { label: "2-3 Log", next: "age" },
-      { label: "4+ Family", next: "age" },
+      { label: "2-3 People", next: "age" },
+      { label: "4+ Family Members", next: "age" },
     ],
   },
   car: {
-    message: "Aapki car ka status?",
+    message: "What's the status of your car?",
     options: [
-      { label: "Nayi Car", next: "budget" },
+      { label: "New Car", next: "budget" },
       { label: "Renewal", next: "budget" },
     ],
   },
   notSure: {
-    message: "Koi tension nahi 👍 Main step-by-step guide karunga.",
-    options: [{ label: "Aage Badhein", next: "age" }],
+    message: "No worries 👍 I'll guide you step-by-step.",
+    options: [{ label: "Continue", next: "age" }],
   },
   age: {
-    message: "Aapka age group?",
+    message: "What's your age group?",
     options: [
       { label: "18–25", next: "budget" },
       { label: "26–35", next: "budget" },
@@ -69,7 +69,7 @@ const buildSteps = (state: State): Record<string, Step> => ({
     ],
   },
   budget: {
-    message: "Aapka monthly budget?",
+    message: "What's your monthly budget?",
     options: [
       { label: "₹500–₹1000", next: "trust" },
       { label: "₹1000–₹3000", next: "trust" },
@@ -77,51 +77,51 @@ const buildSteps = (state: State): Record<string, Step> => ({
     ],
   },
   trust: {
-    message: "Samajh gaya 👍 Aapki needs ke hisaab se plans suggest karunga:\n\n✔ High coverage\n✔ Low premium\n✔ Fast claim support",
-    options: [{ label: "Mere Plans Dekhein", next: "recommend", emoji: "🎯" }],
+    message: "Got it 👍 Based on your needs, I'll suggest plans with:\n\n✔ High coverage\n✔ Low premium\n✔ Fast claim support",
+    options: [{ label: "Show My Plans", next: "recommend", emoji: "🎯" }],
   },
   recommend: {
     message:
-      "Aapke liye recommended:\n\n✔ ₹10–25 lakh coverage\n✔ Affordable premium\n✔ Extra health/critical benefits\n\nYeh strong protection deta hai bina kisi tension ke.",
+      "Here's what I recommend for you:\n\n✔ ₹10–25 lakh coverage\n✔ Affordable premium\n✔ Extra health/critical illness benefits\n\nStrong protection without the stress.",
     options: [
-      { label: "Prices Dikhao", next: "lead" },
-      { label: "Advisor Se Baat", next: "advisor" },
-      { label: "Chhota Start Karein", next: "objStart" },
-      { label: "Compare Karein", next: "objCompare" },
+      { label: "Show Pricing", next: "lead" },
+      { label: "Talk to an Advisor", next: "advisor" },
+      { label: "Start Smaller", next: "objStart" },
+      { label: "Compare Options", next: "objCompare" },
     ],
   },
   objStart: {
-    message: "Chhote plan se shuru karein, kabhi bhi upgrade kar sakte hain 👍",
-    options: [{ label: "Aage Badhein", next: "lead" }],
+    message: "Start with a smaller plan and upgrade anytime 👍",
+    options: [{ label: "Continue", next: "lead" }],
   },
   objCompare: {
-    message: "Main aapko best options side-by-side dikhata hoon.",
-    options: [{ label: "Aage Badhein", next: "lead" }],
+    message: "I'll show you the best options side-by-side.",
+    options: [{ label: "Continue", next: "lead" }],
   },
   advisor: {
-    message: "Bahut badhiya! Hamare advisor personally guide karenge.",
-    options: [{ label: "WhatsApp Par Continue", next: "whatsapp" }],
+    message: "Great choice! Our advisor will guide you personally.",
+    options: [{ label: "Continue on WhatsApp", next: "whatsapp" }],
   },
   lead: {
-    message: "Main aapko best plans exact pricing ke saath bhej dunga.",
+    message: "I'll send you the best plans with exact pricing.",
     options: [
-      { label: "WhatsApp Par Bhejo", next: "whatsapp", emoji: "💬" },
-      { label: "Email Par Bhejo", next: "email", emoji: "📧" },
+      { label: "Send on WhatsApp", next: "whatsapp", emoji: "💬" },
+      { label: "Send by Email", next: "email", emoji: "📧" },
     ],
   },
   whatsapp: {
-    message: "Neeche tap karein WhatsApp par continue karne ke liye 👇",
-    options: [{ label: "WhatsApp Par Continue", next: "__whatsapp__", emoji: "💬" }],
+    message: "Tap below to continue on WhatsApp 👇",
+    options: [{ label: "Continue on WhatsApp", next: "__whatsapp__", emoji: "💬" }],
   },
   email: {
-    message: "Apna email enter karein, plans bhejte hain:",
+    message: "Enter your email and we'll send the plans:",
     input: "email",
   },
   done: {
-    message: "Ho gaya 👍 Aapke personalized plans bheje ja rahe hain.",
+    message: "Done 👍 Your personalized plans are on their way.",
     options: [
       { label: "Restart", next: "__restart__", emoji: "🔄" },
-      { label: "Expert Se Baat", next: "__call__", emoji: "📞" },
+      { label: "Talk to an Expert", next: "__call__", emoji: "📞" },
     ],
   },
 });
@@ -155,7 +155,7 @@ const AIAdvisorChat = () => {
     if (inactivityRef.current) clearTimeout(inactivityRef.current);
     inactivityRef.current = setTimeout(() => {
       if (stepKey !== "done" && stepKey !== "whatsapp") {
-        setHistory((h) => [...h, { from: "bot", text: "Aap wahaan ho? Main 30 second mein finish kar dunga 🙂" }]);
+        setHistory((h) => [...h, { from: "bot", text: "Still there? I'll wrap this up in 30 seconds 🙂" }]);
         setReminderShown(true);
       }
     }, 25000);
@@ -170,7 +170,7 @@ const AIAdvisorChat = () => {
 
     if (opt.next === "__whatsapp__") {
       const summary = encodeURIComponent(
-        `Namaste, mujhe ${state.intent || opt.label} insurance chahiye. Please plans share karein.`
+        `Hi, I'm interested in ${state.intent || opt.label} insurance. Please share suitable plans.`
       );
       window.open(`https://wa.me/919815742277?text=${summary}`, "_blank");
       setTimeout(() => {
@@ -252,7 +252,7 @@ const AIAdvisorChat = () => {
                 <div className="font-heading text-primary-foreground font-bold text-lg leading-tight">WeSure AI Advisor</div>
                 <div className="flex items-center gap-1.5 text-[11px] text-primary-foreground/70">
                   <span className="w-1.5 h-1.5 rounded-full bg-trust animate-pulse" />
-                  Online · Turant reply
+                  Online · Instant reply
                 </div>
               </div>
               <button

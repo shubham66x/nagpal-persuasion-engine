@@ -5,17 +5,17 @@ const benefits = [
   {
     icon: ShieldCheck,
     title: "Unbiased Advice",
-    desc: "Hum 20+ insurance companies se kaam karte hain — sirf aapke liye sahi plan suggest karte hain.",
+    desc: "We work with 20+ insurance companies — and recommend only what's right for you.",
   },
   {
     icon: Users,
     title: "Expert Guidance",
-    desc: "15+ saal ka experience. Simple language mein samjhayenge, koi jargon nahi.",
+    desc: "15+ years of experience. Plain-language explanations — zero jargon, zero confusion.",
   },
   {
     icon: HeartHandshake,
     title: "Claim Support",
-    desc: "Claim ke time hum aapke saath khade hain — start to finish poori madad.",
+    desc: "When it matters most, we stand by you — full assistance from start to finish.",
   },
 ];
 
@@ -30,7 +30,7 @@ const BenefitsSection = () => (
       >
         <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Why WeSure</span>
         <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mt-3">
-          Sirf 3 cheezein, jo matter karti hain
+          Three things that actually matter
         </h2>
       </motion.div>
 
@@ -54,8 +54,8 @@ const BenefitsSection = () => (
       </div>
 
       <div className="text-center mt-12">
-        <a href="#cta" className="btn-primary-cta">Free Consultation Lo</a>
-        <p className="text-sm text-muted-foreground mt-3">Koi charge nahi. Koi commitment nahi.</p>
+        <a href="#cta" className="btn-primary-cta">Get Free Consultation</a>
+        <p className="text-sm text-muted-foreground mt-3">No charge. No commitment.</p>
       </div>
     </div>
   </section>
