@@ -38,7 +38,7 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold text-primary-foreground text-base mb-3">Service Area</h4>
           <ul className="space-y-2 text-base">
-            <li>🇮🇳 Pure India Mein Service</li>
+            <li>🇮🇳 Serving All of India</li>
             <li>Head Office: Ludhiana, Punjab</li>
             <li>Remote Consultation Available</li>
           </ul>

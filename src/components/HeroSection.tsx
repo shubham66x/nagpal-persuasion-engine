@@ -32,28 +32,28 @@ const HeroSection = () => {
             </span>
 
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] mb-5">
-              Free Insurance Guidance for Indian Families —{" "}
-              <span className="text-gradient-gold">Without Confusion</span>
+              Insurance Made Simple.{" "}
+              <span className="text-gradient-gold">Protection Made Personal.</span>
             </h1>
 
             <p className="text-lg text-primary-foreground/85 leading-relaxed mb-8 max-w-xl">
-              Hum aapko best life aur health insurance choose karne mein help karte hain — bina kisi bias ke.
+              Free, unbiased guidance to help Indian families choose the right life and health insurance — without the confusion, jargon, or sales pressure.
             </p>
 
             <div className="flex flex-col items-start gap-3 mb-10">
               <a href="#cta" onClick={scrollToForm} className="btn-primary-cta animate-pulse-glow">
-                Free Consultation Lo
+                Get Free Consultation
               </a>
               <p className="text-sm text-primary-foreground/75">
-                Koi charge nahi. Koi commitment nahi. Sirf expert advice.
+                No charge. No commitment. Just expert advice.
               </p>
               <a
-                href="https://wa.me/919815742277?text=Namaste%2C%20mujhe%20insurance%20guidance%20chahiye"
+                href="https://wa.me/919815742277?text=Hi%2C%20I%20need%20insurance%20guidance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-secondary hover:text-secondary/80 underline underline-offset-4 transition-colors"
               >
-                Ya WhatsApp pe baat karein →
+                Or chat with us on WhatsApp →
               </a>
             </div>
 
